@@ -9,6 +9,16 @@ endif
 
 " https://get.slack.help/hc/en-us/articles/202288908-Format-your-messages
 
+" ordered list - 1. foo
+syn match slackFormatList "^1. "
+
+" bulleted list - * foo
+syn match slackFormatList "^* "
+
+syn region slackFormatLink start="\[" end="\]"
+
+syn region slackFormatURL start="(" end=")"
+
 " bold - *word anotherword*
 syn region slackFormatBold start="\%(^\|\s\)\@<=\*\S\@=" end="\S\@<=\*\%($\|\s\|[[:punct:]]\)\@<=" keepend
 
@@ -42,6 +52,10 @@ hi def link slackFormatInlineCode Type
 hi def link slackFormatCodeBlock String
 hi def link slackFormatBlockQuote Comment
 hi def link slackFormatBlockQuoteMuliline Comment
+
+hi def link slackFormatList Identifier
+hi def link slackFormatLink Underlined
+hi def link slackFormatURL Comment
 
 let b:current_syntax="slack"
 set foldmethod=syntax
