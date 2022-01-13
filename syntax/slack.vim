@@ -48,7 +48,7 @@ hi def Strike term=reverse cterm=reverse gui=reverse
 hi def link slackFormatBold Bold
 hi def link slackFormatItalic Italic
 hi def link slackFormatStrike Strike
-hi def link slackFormatInlineCode Type
+hi def link slackFormatInlineCode String
 hi def link slackFormatCodeBlock String
 hi def link slackFormatBlockQuote Comment
 hi def link slackFormatBlockQuoteMuliline Comment
