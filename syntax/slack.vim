@@ -17,7 +17,7 @@ syn match slackFormatList "^* "
 
 syn region slackFormatLink start="\[" end="\]"
 
-syn region slackFormatURL start="(" end=")"
+syn region slackFormatURL start="(" end=")" contains=@NoSpell
 
 " bold - *word anotherword*
 syn region slackFormatBold start="\%(^\|\s\)\@<=\*\S\@=" end="\S\@<=\*\%($\|\s\|[[:punct:]]\)\@<=" keepend
@@ -32,7 +32,7 @@ syn region slackFormatStrike start="\%(^\|\s\)\@<=\~\S\@=" end="\S\@<=\~\%($\|\s
 syn region slackFormatInlineCode start="\%(^\|\s\)\`\S\@=" end="\S\@<=\`\%($\|\s\|[[:punct:]]\)\@<=" keepend contains=@NoSpell
 
 "   block of preformated fixed with code ```code and stuff```
-syn region slackFormatCodeBlock start="^\s*```" end="\s*```$" keepend
+syn region slackFormatCodeBlock start="^\s*```" end="\s*```$" keepend contains=@NoSpell
 
 "   > to block quote one paragraph
 "   >>> to block quote multiple paragraphs
