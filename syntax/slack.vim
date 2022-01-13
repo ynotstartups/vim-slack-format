@@ -31,13 +31,13 @@ syn region slackFormatStrike start="\%(^\|\s\)\@<=\~\S\@=" end="\S\@<=\~\%($\|\s
 "   inline code block `inline code`
 syn region slackFormatInlineCode start="\%(^\|\s\)\`\S\@=" end="\S\@<=\`\%($\|\s\|[[:punct:]]\)\@<=" keepend contains=@NoSpell
 
-"   block of preformated fixed with code ```code and stuff``` 
-syn region slackFormatCodeBlock start="^\s*```" end="\s*```$" keepend fold contains=@NoSpell
+"   block of preformated fixed with code ```code and stuff```
+syn region slackFormatCodeBlock start="^\s*```" end="\s*```$" keepend
 
 "   > to block quote one paragraph
 "   >>> to block quote multiple paragraphs
-syn region slackFormatBlockQuote start="^>\s" end="$" contains=slackFormatBold,slackFormatItalic,slackFormatStrike,slackFormatInlineCode fold keepend
-syn region slackFormatBlockQuoteMultiline start="^>>>\s" end="\%$" contains=slackFormatBold,slackFormatItalic,slackFormatStrike,slackFormatInlineCode fold
+syn region slackFormatBlockQuote start="^>\s" end="$" contains=slackFormatBold,slackFormatItalic,slackFormatStrike,slackFormatInlineCode keepend
+syn region slackFormatBlockQuoteMultiline start="^>>>\s" end="\%$" contains=slackFormatBold,slackFormatItalic,slackFormatStrike,slackFormatInlineCode
 
 " Highlight
 
@@ -58,4 +58,3 @@ hi def link slackFormatLink Underlined
 hi def link slackFormatURL Comment
 
 let b:current_syntax="slack"
-set foldmethod=syntax
